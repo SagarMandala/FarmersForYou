@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenHarvest Farms - Premium Grains & Farming Excellence</title>
+    <title>Farmers For You - Premium Grains & Farming Excellence</title>
     
     <!-- Bootstrap 5.3.2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,31 +36,95 @@
 
         /* Header Styles */
         .navbar {
-    background: transparent !important;
-    backdrop-filter: none;
-    transition: all 0.3s ease;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    <!-- padding: 2rem 0; /* Keep big logo padding */ -->
-    box-shadow: none;
-}
+            background: transparent !important;
+            backdrop-filter: none;
+            transition: all 0.3s ease;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 2rem 0;
+            box-shadow: none;
+        }
 
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #ffffff !important;
+            padding: 0;
+            text-decoration: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
 
-.navbar-brand {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: #ffffff !important;
-    padding: 0;
-    text-decoration: none !important;
-}
+        .logo-img {
+            height: 160px;
+            width: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            background: transparent !important;
+            filter: 
+                brightness(1.1) 
+                contrast(1.1) 
+                drop-shadow(0 0 5px rgba(255, 255, 255, 0.3))
+                drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.7));
+        }
+
+        .brand-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 1rem;
+        }
+
+        .brand-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.2rem;
+            color: #ffffff;
+            line-height: 1.1;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.8),
+                0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-caption {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 0.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            letter-spacing: 0.5px;
+        }
+
+        /* Contact info styling */
         .contact-info {
-            color: var(--cream);
+            color: #ffffff;
+            font-size: 1rem;
+            text-shadow: 
+                1px 1px 3px rgba(0, 0, 0, 0.8),
+                0 0 6px rgba(0, 0, 0, 0.6);
         }
 
         .contact-info i {
-            color: var(--accent-gold);
+            color: #f4a261;
             margin-right: 0.5rem;
+            filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.7));
+        }
+
+        /* Enhanced hover effect */
+        .navbar-brand:hover .logo-img {
+            transform: scale(1.08);
+        }
+
+        .navbar-brand:hover .brand-text {
+            color: var(--accent-gold);
+        }
+
+        .navbar-brand:hover .brand-caption {
+            color: rgba(244, 162, 97, 0.9);
         }
 
         /* Section Styles */
@@ -95,9 +159,8 @@
 
         /* Hero Section */
         .bg-hero { 
-    background-image: linear-gradient(rgba(45, 80, 22, 0.3), rgba(45, 80, 22, 0.3)), url('hero-background.jpg'); 
-}
-
+            background-image: linear-gradient(rgba(45, 80, 22, 0.3), rgba(45, 80, 22, 0.3)), url('hero-background.jpg'); 
+        }
 
         .hero-title {
             font-family: 'Playfair Display', serif;
@@ -235,7 +298,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Background Image Classes - REPLACE THESE FILENAMES WITH YOUR ACTUAL IMAGE FILES */
+        /* Background Image Classes */
         .bg-plowing { 
             background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('plowing-background.jpg'); 
         }
@@ -251,11 +314,169 @@
         .bg-processing { 
             background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('processing-background.jpg'); 
         }
-		.bg-brocher-1 { 
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('brocher-1.jpg'); 
+
+        /* Gallery Section */
+        .gallery-section {
+            background: #ffffff;
+            padding: 4rem 0;
         }
-		.bg-brocher-2 { 
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('brocher-2.jpg'); 
+
+        .gallery-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-image-container::before {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-top: 66.67%;
+        }
+
+        .gallery-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image-container:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(45, 80, 22, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-image-container:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .click-hint {
+            color: white;
+            font-size: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+
+        .image-info-box {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .image-info-box strong {
+            color: var(--primary-green);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #modalImage {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-caption {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .modal-caption h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: var(--accent-gold);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         /* Scroll Progress Indicator */
@@ -270,481 +491,123 @@
             transition: width 0.3s ease;
         }
 
-        /* Responsive Design */
+        /* Mobile Responsive Design - FIXED */
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .process-title { font-size: 2.2rem; }
-            .process-description { font-size: 1.1rem; }
-            .process-content { padding: 2rem; }
-            .navbar-brand { font-size: 1.5rem; }
-            .contact-info { font-size: 0.9rem; }
-            .process-icon { font-size: 3rem; }
+            .navbar {
+                padding: 1.5rem 0;
+            }
+            
+            .navbar .container {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .navbar-brand {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .logo-img {
+                height: 120px;
+                margin-bottom: 0.5rem;
+            }
+            
+            .brand-content {
+                margin-left: 0;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .brand-text {
+                font-size: 2.4rem;
+                text-align: center;
+            }
+            
+            .brand-caption {
+                font-size: 0.8rem;
+                text-align: center;
+            }
+            
+            .contact-info {
+                display: none !important;
+            }
+            
+            .hero-title { 
+                font-size: 2.5rem; 
+            }
+            
+            .process-title { 
+                font-size: 2.2rem; 
+            }
+            
+            .process-description { 
+                font-size: 1.1rem; 
+            }
+            
+            .process-content { 
+                padding: 2rem; 
+            }
+            
+            .process-icon { 
+                font-size: 3rem; 
+            }
+            
+            .gallery-section {
+                padding: 3rem 0;
+            }
+            
+            .overlay-text {
+                font-size: 1.4rem;
+            }
+            
+            .click-hint {
+                font-size: 0.9rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 10px;
+            }
+            
+            #modalImage {
+                max-height: 70vh;
+            }
+            
+            .close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
         }
-		
-		.navbar-brand {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: var(--accent-gold) !important;
-    padding: 0.25rem 0; /* Add some vertical padding */
-}
 
-.logo-img {
-    height: 160px; /* Keep your big logo size */
-    width: auto;
-    object-fit: contain;
-    transition: all 0.3s ease;
-    background: transparent !important;
-    filter: 
-        brightness(1.1) 
-        contrast(1.1) 
-        drop-shadow(0 0 5px rgba(255, 255, 255, 0.3))
-        drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.7));
-}
-.brand-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.logo-img:hover {
-    transform: scale(1.05);
-}
-
-/* Responsive adjustments for your portrait logo */
-@media (max-width: 768px) {
-    .logo-img {
-        height: 80px;
-    }
-    .navbar {
-        padding: 0.75rem 0; /* Slightly more padding on mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-img {
-        height: 120px;
-    }
-}
-.brand-text {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 3.2rem; /* Keep big text size */
-    color: #ffffff;
-    line-height: 1.1;
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 10px rgba(0, 0, 0, 0.5);
-}
-/* Responsive sizing */
-@media (max-width: 768px) {
-    .logo-img {
-        height: 80px;
-    }
-    .brand-text {
-        font-size: 2.4rem;
-    }
-    .navbar {
-        padding: 1.2rem 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-img {
-        height: 120px;
-    }
-    .brand-text {
-        font-size: 2.2rem;
-    }
-    .navbar {
-        padding: 1rem 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1.5rem 0;
-    }
-    
-    .logo-img {
-        height: 80px; /* Big but mobile-friendly */
-    }
-    
-    .brand-text {
-        font-size: 2.8rem;
-        margin-left: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        padding: 1.2rem 0;
-    }
-    
-    .logo-img {
-        height: 120px;
-    }
-    
-    .brand-text {
-        font-size: 2.5rem;
-        margin-left: 0.6rem;
-    }
-    
-    /* Stack logo and text on very small screens */
-    .navbar-brand {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .brand-text {
-        margin-left: 0;
-        margin-top: 0.5rem;
-    }
-}
-
-/* Gallery Section */
-.gallery-section {
-    background: #ffffff;
-    padding: 4rem 0;
-}
-
-.gallery-image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.gallery-image-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* 3:2 Aspect Ratio for 2550×1650 */
-.gallery-image-container::before {
-    content: '';
-    display: block;
-    width: 100%;
-    padding-top: 66.67%; /* 3:2 aspect ratio (2/3 = 0.6667) */
-}
-
-.gallery-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-image-container:hover .gallery-img {
-    transform: scale(1.05);
-}
-
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(45, 80, 22, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-image-container:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.overlay-text {
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Image Info Box */
-.image-info-box {
-    background: #f8f9fa;
-    border: 2px dashed #dee2e6;
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.4;
-}
-
-.image-info-box strong {
-    color: var(--primary-green);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .gallery-section {
-        padding: 3rem 0;
-    }
-    
-    .overlay-text {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .gallery-image-container::before {
-        padding-top: 70%; /* Slightly taller on mobile */
-    }
-    
-    .overlay-text {
-        font-size: 1.2rem;
-    }
-}
-/* Gallery Section - Updated */
-.gallery-section {
-    background: #ffffff;
-    padding: 4rem 0;
-}
-
-.gallery-image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer; /* Show it's clickable */
-}
-
-.gallery-image-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* 3:2 Aspect Ratio for 2550×1650 */
-.gallery-image-container::before {
-    content: '';
-    display: block;
-    width: 100%;
-    padding-top: 66.67%; /* 3:2 aspect ratio */
-}
-
-.gallery-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-image-container:hover .gallery-img {
-    transform: scale(1.05);
-}
-
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(45, 80, 22, 0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-image-container:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.overlay-text {
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 0.5rem;
-}
-
-.click-hint {
-    color: white;
-    font-size: 1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin: 0;
-}
-
-/* Image Info Box */
-.image-info-box {
-    background: #f8f9fa;
-    border: 2px dashed #dee2e6;
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.4;
-}
-
-.image-info-box strong {
-    color: var(--primary-green);
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    animation: fadeIn 0.3s ease;
-}
-
-.modal-content {
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 1200px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#modalImage {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    animation: zoomIn 0.3s ease;
-}
-
-.modal-caption {
-    text-align: center;
-    color: white;
-    margin-top: 20px;
-}
-
-.modal-caption h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin: 0;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10000;
-    transition: color 0.3s ease;
-}
-
-.close:hover {
-    color: var(--accent-gold);
-}
-
-/* Modal Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* Responsive Modal */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        padding: 10px;
-    }
-    
-    #modalImage {
-        max-height: 70vh;
-    }
-    
-    .close {
-        top: 10px;
-        right: 20px;
-        font-size: 30px;
-    }
-    
-    .overlay-text {
-        font-size: 1.4rem;
-    }
-    
-    .click-hint {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .gallery-image-container::before {
-        padding-top: 70%;
-    }
-    
-    .overlay-text {
-        font-size: 1.2rem;
-    }
-}
-
-.brand-caption {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 0.2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    letter-spacing: 0.5px;
-}	
-/* Enhanced hover effect */
-.navbar-brand:hover .logo-img {
-    transform: scale(1.08);
-}
-
-.navbar-brand:hover .brand-text {
-    color: var(--accent-gold);
-}
-
-.navbar-brand:hover .brand-caption {
-    color: rgba(244, 162, 97, 0.9);
-}
-
-/* Contact info styling */
-.contact-info {
-    color: #ffffff;
-    font-size: 1rem;
-    text-shadow: 
-        1px 1px 3px rgba(0, 0, 0, 0.8),
-        0 0 6px rgba(0, 0, 0, 0.6);
-}
-
-.contact-info i {
-    color: #f4a261;
-    margin-right: 0.5rem;
-    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.7));
-}
-
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 1rem 0;
+            }
+            
+            .logo-img {
+                height: 120px;
+            }
+            
+            .brand-text {
+                font-size: 2rem;
+            }
+            
+            .brand-caption {
+                font-size: 0.75rem;
+            }
+            
+            .gallery-image-container::before {
+                padding-top: 70%;
+            }
+            
+            .overlay-text {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -754,16 +617,13 @@
     <!-- Navigation Header -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            
-			<a class="navbar-brand d-flex align-items-center" href="#home">
-    <img src="your-logo.png" alt="Logo" class="logo-img me-3">
-    <div class="brand-content">
-        <span class="brand-text">Farmers For You</span>
-        <div class="brand-caption">From the Earth, For your Health</div>
-    </div>
-</a>
-
-
+            <a class="navbar-brand" href="#home">
+                <img src="your-logo.png" alt="Farmers For You Logo" class="logo-img">
+                <div class="brand-content">
+                    <span class="brand-text">Farmers For You</span>
+                    <div class="brand-caption">From the Earth, For your Health</div>
+                </div>
+            </a>
             
             <div class="contact-info d-none d-md-block">
                 <span class="me-4">
@@ -784,7 +644,6 @@
                 <div class="col-lg-8">
                     <h3 class="hero-title">From the Earth, For your Health</h3>
                     <p class="hero-subtitle">Premium Quality Grains Through Sustainable Farming Excellence</p>
-                    <!-- <button class="btn cta-btn">Explore Our Journey</button> -->
                 </div>
             </div>
         </div>
@@ -883,107 +742,76 @@
             </div>
         </div>
     </section>
-	 <!-- Image Gallery Section -->
-<!-- Image Gallery Section -->
-<section class="gallery-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-4">
-                <h2 class="display-4 mb-3" style="font-family: 'Playfair Display', serif; color: var(--primary-green);">Our Farm Gallery</h2>
-                <p class="text-muted">Click on images to view in full size</p>
+
+    <!-- Image Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="display-4 mb-3" style="font-family: 'Playfair Display', serif; color: var(--primary-green);">Our Farm Gallery</h2>
+                    <p class="text-muted">Click on images to view in full size</p>
+                </div>
             </div>
-        </div>
-        
-        <div class="row">
-            <!-- Image 1 -->
-            <div class="col-lg-6 col-md-12 mb-4">
-                <div class="gallery-image-container" onclick="openModal('gallery-image-1.jpg', 'Our Fields - Farm View')">
-                    <img src="gallery-image-1.jpg" alt="Farm Image 1" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h4 class="overlay-text">Our Fields</h4>
-                        <p class="click-hint">Click to view full size</p>
+            
+            <div class="row">
+                <!-- Image 1 -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="gallery-image-container" onclick="openModal('gallery-image-1.jpg', 'Our Fields - Farm View')">
+                        <img src="gallery-image-1.jpg" alt="Farm Image 1" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="overlay-text">Our Fields</h4>
+                            <p class="click-hint">Click to view full size</p>
+                        </div>
+                        <!-- Image Placeholder Info -->
+                        <div class="image-info-box">
+                            <strong>Image 1 (2550×1650):</strong><br>
+                            <em>AI Prompt: "Wide panoramic view of green agricultural fields, farming landscape, 3:2 aspect ratio, natural lighting, rural farming scene"</em>
+                        </div>
                     </div>
-                    <!-- Image Placeholder Info -->
-                    <div class="image-info-box">
-                        <strong>Image 1 (2550×1650):</strong><br>
-                        <em>AI Prompt: "Wide panoramic view of green agricultural fields, farming landscape, 3:2 aspect ratio, natural lighting, rural farming scene"</em>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="gallery-image-container" onclick="openModal('gallery-image-2.jpg', 'Our Harvest - Golden Fields')">
+                        <img src="gallery-image-2.jpg" alt="Farm Image 2" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="overlay-text">Our Harvest</h4>
+                            <p class="click-hint">Click to view full size</p>
+                        </div>
+                        <!-- Image Placeholder Info -->
+                        <div class="image-info-box">
+                            <strong>Image 2 (2550×1650):</strong><br>
+                            <em>AI Prompt: "Abundant grain harvest display, farmers working in fields, 3:2 aspect ratio, golden hour photography, agricultural abundance"</em>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Image 2 -->
-            <div class="col-lg-6 col-md-12 mb-4">
-                <div class="gallery-image-container" onclick="openModal('gallery-image-2.jpg', 'Our Harvest - Golden Fields')">
-                    <img src="gallery-image-2.jpg" alt="Farm Image 2" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h4 class="overlay-text">Our Harvest</h4>
-                        <p class="click-hint">Click to view full size</p>
-                    </div>
-                    <!-- Image Placeholder Info -->
-                    <div class="image-info-box">
-                        <strong>Image 2 (2550×1650):</strong><br>
-                        <em>AI Prompt: "Abundant grain harvest display, farmers working in fields, 3:2 aspect ratio, golden hour photography, agricultural abundance"</em>
-                    </div>
-                </div>
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-caption">
+                <h4 id="modalTitle"></h4>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Image Modal -->
-<div id="imageModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img id="modalImage" src="" alt="">
-        <div class="modal-caption">
-            <h4 id="modalTitle"></h4>
-        </div>
-    </div>
-</div>
-
-
 
     <!-- About Section -->
     <section class="about-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mb-5">
-                    <h2 class="display-4 mb-4" style="font-family: 'Playfair Display', serif;">About GreenHarvest Farms</h2>
+                    <h2 class="display-4 mb-4" style="font-family: 'Playfair Display', serif;">About Farmers For You</h2>
                     <p class="lead">With over two decades of farming excellence, we've built a reputation for producing the finest quality grains through sustainable and innovative agricultural practices.</p>
                     <p>Our commitment to quality starts from the soil and extends to your table. We combine traditional farming wisdom with modern technology to deliver premium grains that nourish families across the region.</p>
                 </div>
-                <!-- <div class="col-lg-6"> -->
-                    <!-- <div class="row"> -->
-                        <!-- <div class="col-md-6"> -->
-                            <!-- <div class="stats-card"> -->
-                                <!-- <div class="stats-number">500+</div> -->
-                                <!-- <div>Acres Cultivated</div> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                        <!-- <div class="col-md-6"> -->
-                            <!-- <div class="stats-card"> -->
-                                <!-- <div class="stats-number">20+</div> -->
-                                <!-- <div>Years Experience</div> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                        <!-- <div class="col-md-6"> -->
-                            <!-- <div class="stats-card"> -->
-                                <!-- <div class="stats-number">1000+</div> -->
-                                <!-- <div>Happy Customers</div> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                        <!-- <div class="col-md-6"> -->
-                            <!-- <div class="stats-card"> -->
-                                <!-- <div class="stats-number">15</div> -->
-                                <!-- <div>Grain Varieties</div> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
-                <!-- </div> -->
             </div>
         </div>
     </section>
-
 
     <!-- Contact Section -->
     <section class="contact-section">
@@ -999,7 +827,7 @@
                                 <p>Suraiahpalli, Manthani, Peddapalli<br>Telangana, India - 505184</p>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">	
+                        <div class="col-md-4 mb-4">
                             <div class="contact-card text-center">
                                 <i class="fas fa-phone fa-2x mb-3" style="color: var(--accent-gold);"></i>
                                 <h5>Call Us</h5>
@@ -1070,73 +898,46 @@
             if (window.scrollY > 100) {
                 navbar.style.background = 'rgba(45, 80, 22, 0.98)';
             } else {
-                navbar.style.background = 'rgba(45, 80, 22, 0.95)';
+                navbar.style.background = 'transparent';
             }
         });
 
-        // Stats counter animation
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statsNumber = entry.target.querySelector('.stats-number');
-                    const finalNumber = parseInt(statsNumber.textContent);
-                    let currentNumber = 0;
-                    const increment = finalNumber / 50;
-                    
-                    const timer = setInterval(() => {
-                        currentNumber += increment;
-                        if (currentNumber >= finalNumber) {
-                            statsNumber.textContent = finalNumber + (statsNumber.textContent.includes('+') ? '+' : '');
-                            clearInterval(timer);
-                        } else {
-                            statsNumber.textContent = Math.floor(currentNumber) + (statsNumber.textContent.includes('+') ? '+' : '');
-                        }
-                    }, 30);
-                }
-            });
-        }, { threshold: 0.5 });
+        // Image Modal Functions
+        function openModal(imageSrc, title) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            modalTitle.textContent = title;
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
 
-        document.querySelectorAll('.stats-card').forEach(card => {
-            statsObserver.observe(card);
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
         });
-		
-		// Image Modal Functions
-function openModal(imageSrc, title) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    
-    modal.style.display = 'block';
-    modalImg.src = imageSrc;
-    modalTitle.textContent = title;
-    
-    // Prevent body scrolling when modal is open
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-    const modal = document.getElementById('imageModal');
-    modal.style.display = 'none';
-    
-    // Restore body scrolling
-    document.body.style.overflow = 'auto';
-}
-
-// Close modal when clicking outside the image
-window.onclick = function(event) {
-    const modal = document.getElementById('imageModal');
-    if (event.target === modal) {
-        closeModal();
-    }
-}
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closeModal();
-    }
-});
-
     </script>
 </body>
 </html>
