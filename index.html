@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenHarvest Farms - Premium Grains & Farming Excellence</title>
+    
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #2d5016;
+            --secondary-green: #4a7c59;
+            --accent-gold: #f4a261;
+            --light-green: #a7c957;
+            --earth-brown: #6f4e37;
+            --cream: #f4f3ee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        .navbar {
+    background: transparent !important;
+    backdrop-filter: none;
+    transition: all 0.3s ease;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    <!-- padding: 2rem 0; /* Keep big logo padding */ -->
+    box-shadow: none;
+}
+
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #ffffff !important;
+    padding: 0;
+    text-decoration: none !important;
+}
+        .contact-info {
+            color: var(--cream);
+        }
+
+        .contact-info i {
+            color: var(--accent-gold);
+            margin-right: 0.5rem;
+        }
+
+        /* Section Styles */
+        .scroll-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.8s ease-in-out;
+        }
+
+        .section-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .bg-hero { 
+    background-image: linear-gradient(rgba(45, 80, 22, 0.3), rgba(45, 80, 22, 0.3)), url('hero-background.jpg'); 
+}
+
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Process Sections */
+        .process-section {
+            padding: 4rem 0;
+        }
+
+        .process-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .process-content.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .process-icon {
+            font-size: 4rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .process-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .process-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            background: linear-gradient(45deg, var(--accent-gold), #e76f51);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(244, 162, 97, 0.4);
+            color: white;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--cream);
+            color: var(--primary-green);
+            padding: 5rem 0;
+        }
+
+        .stats-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--primary-green);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Background Image Classes - REPLACE THESE FILENAMES WITH YOUR ACTUAL IMAGE FILES */
+        .bg-plowing { 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('plowing-background.jpg'); 
+        }
+        .bg-sowing { 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('sowing-background.jpg'); 
+        }
+        .bg-growing { 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('growing-background.jpg'); 
+        }
+        .bg-harvesting { 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('harvesting-background.jpg'); 
+        }
+        .bg-processing { 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('processing-background.jpg'); 
+        }
+		.bg-brocher-1 { 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('brocher-1.jpg'); 
+        }
+		.bg-brocher-2 { 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('brocher-2.jpg'); 
+        }
+
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--light-green));
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .process-title { font-size: 2.2rem; }
+            .process-description { font-size: 1.1rem; }
+            .process-content { padding: 2rem; }
+            .navbar-brand { font-size: 1.5rem; }
+            .contact-info { font-size: 0.9rem; }
+            .process-icon { font-size: 3rem; }
+        }
+		
+		.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--accent-gold) !important;
+    padding: 0.25rem 0; /* Add some vertical padding */
+}
+
+.logo-img {
+    height: 160px; /* Keep your big logo size */
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    background: transparent !important;
+    filter: 
+        brightness(1.1) 
+        contrast(1.1) 
+        drop-shadow(0 0 5px rgba(255, 255, 255, 0.3))
+        drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.7));
+}
+.brand-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for your portrait logo */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 38px;
+    }
+    .navbar {
+        padding: 0.75rem 0; /* Slightly more padding on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 32px;
+    }
+}
+.brand-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.2rem; /* Keep big text size */
+    color: #ffffff;
+    line-height: 1.1;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* Responsive sizing */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 55px;
+    }
+    .brand-text {
+        font-size: 1.4rem;
+    }
+    .navbar {
+        padding: 1.2rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 45px;
+    }
+    .brand-text {
+        font-size: 1.2rem;
+    }
+    .navbar {
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1.5rem 0;
+    }
+    
+    .logo-img {
+        height: 70px; /* Big but mobile-friendly */
+    }
+    
+    .brand-text {
+        font-size: 1.8rem;
+        margin-left: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1.2rem 0;
+    }
+    
+    .logo-img {
+        height: 60px;
+    }
+    
+    .brand-text {
+        font-size: 1.5rem;
+        margin-left: 0.6rem;
+    }
+    
+    /* Stack logo and text on very small screens */
+    .navbar-brand {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .brand-text {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Gallery Section */
+.gallery-section {
+    background: #ffffff;
+    padding: 4rem 0;
+}
+
+.gallery-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 3:2 Aspect Ratio for 2550×1650 */
+.gallery-image-container::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 66.67%; /* 3:2 aspect ratio (2/3 = 0.6667) */
+}
+
+.gallery-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image-container:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(45, 80, 22, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-image-container:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Info Box */
+.image-info-box {
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.image-info-box strong {
+    color: var(--primary-green);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 3rem 0;
+    }
+    
+    .overlay-text {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-image-container::before {
+        padding-top: 70%; /* Slightly taller on mobile */
+    }
+    
+    .overlay-text {
+        font-size: 1.2rem;
+    }
+}
+/* Gallery Section - Updated */
+.gallery-section {
+    background: #ffffff;
+    padding: 4rem 0;
+}
+
+.gallery-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer; /* Show it's clickable */
+}
+
+.gallery-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 3:2 Aspect Ratio for 2550×1650 */
+.gallery-image-container::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 66.67%; /* 3:2 aspect ratio */
+}
+
+.gallery-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image-container:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(45, 80, 22, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-image-container:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.click-hint {
+    color: white;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* Image Info Box */
+.image-info-box {
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.image-info-box strong {
+    color: var(--primary-green);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalImage {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-caption {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+.modal-caption h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--accent-gold);
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    #modalImage {
+        max-height: 70vh;
+    }
+    
+    .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+    
+    .overlay-text {
+        font-size: 1.4rem;
+    }
+    
+    .click-hint {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-image-container::before {
+        padding-top: 70%;
+    }
+    
+    .overlay-text {
+        font-size: 1.2rem;
+    }
+}
+
+.brand-caption {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.5px;
+}	
+/* Enhanced hover effect */
+.navbar-brand:hover .logo-img {
+    transform: scale(1.08);
+}
+
+.navbar-brand:hover .brand-text {
+    color: var(--accent-gold);
+}
+
+.navbar-brand:hover .brand-caption {
+    color: rgba(244, 162, 97, 0.9);
+}
+
+/* Contact info styling */
+.contact-info {
+    color: #ffffff;
+    font-size: 1rem;
+    text-shadow: 
+        1px 1px 3px rgba(0, 0, 0, 0.8),
+        0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.contact-info i {
+    color: #f4a261;
+    margin-right: 0.5rem;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.7));
+}
+
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            
+			<a class="navbar-brand d-flex align-items-center" href="#home">
+    <img src="your-logo.png" alt="Logo" class="logo-img me-3">
+    <div class="brand-content">
+        <span class="brand-text">Farmers For You</span>
+        <div class="brand-caption">From the Earth, For your Health</div>
+    </div>
+</a>
+
+
+            
+            <div class="contact-info d-none d-md-block">
+                <span class="me-4">
+                    <i class="fas fa-phone"></i>+91 94411 68563
+                </span>
+                <span>
+                    <i class="fas fa-envelope"></i>farmersforyou2025@gmail.com
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="scroll-section hero-section bg-hero">
+        <div class="section-overlay"></div>
+        <div class="container section-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h3 class="hero-title">From the Earth, For your Health</h3>
+                    <p class="hero-subtitle">Premium Quality Grains Through Sustainable Farming Excellence</p>
+                    <!-- <button class="btn cta-btn">Explore Our Journey</button> -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <i class="fas fa-wheat-awn floating-element" style="top: 20%; left: 10%; font-size: 2rem;"></i>
+        <i class="fas fa-leaf floating-element" style="top: 60%; right: 15%; font-size: 1.5rem; animation-delay: -2s;"></i>
+    </section>
+
+    <!-- Plowing Section -->
+    <section id="plowing" class="scroll-section process-section bg-plowing">
+        <div class="section-overlay"></div>
+        <div class="container section-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="process-content">
+                        <div class="process-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <h2 class="process-title">Land Preparation</h2>
+                        <p class="process-description">Our journey begins with careful land preparation. Using modern machinery and traditional wisdom, we plow the fields to create the perfect foundation for healthy crop growth. Every furrow is precisely planned to ensure optimal water drainage and nutrient distribution for maximum yield potential.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sowing Section -->
+    <section id="sowing" class="scroll-section process-section bg-sowing">
+        <div class="section-overlay"></div>
+        <div class="container section-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="process-content">
+                        <div class="process-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h2 class="process-title">Seed Sowing</h2>
+                        <p class="process-description">With precision and care, we sow premium quality seeds using scientific methods to ensure optimal spacing and depth for maximum yield potential. Our experienced farmers select the finest varieties and use time-tested techniques combined with modern agricultural practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growing Section -->
+    <section id="growing" class="scroll-section process-section bg-growing">
+        <div class="section-overlay"></div>
+        <div class="container section-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="process-content">
+                        <div class="process-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h2 class="process-title">Nurturing Growth</h2>
+                        <p class="process-description">Through careful monitoring and sustainable practices, we nurture our crops to achieve lush green fields that promise abundant harvests. Our irrigation systems and organic fertilization methods ensure healthy growth while protecting the environment for future generations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harvesting Section -->
+    <section id="harvesting" class="scroll-section process-section bg-harvesting">
+        <div class="section-overlay"></div>
+        <div class="container section-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="process-content">
+                        <div class="process-icon">
+                            <i class="fas fa-wheat-awn"></i>
+                        </div>
+                        <h2 class="process-title">Harvest Time</h2>
+                        <p class="process-description">When crops reach perfect maturity, our skilled team harvests with precision timing to ensure maximum quality and nutritional value in every grain. We use both traditional methods and modern equipment to preserve the integrity of our premium produce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processing Section -->
+    <section id="processing" class="scroll-section process-section bg-processing">
+        <div class="section-overlay"></div>
+        <div class="container section-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="process-content">
+                        <div class="process-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h2 class="process-title">Processing & Packaging</h2>
+                        <p class="process-description">Our state-of-the-art processing facility ensures that every grain maintains its natural goodness while meeting the highest quality standards. Through careful cleaning, sorting, and hygienic packaging, we deliver farm-fresh quality to our customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	 <!-- Image Gallery Section -->
+<!-- Image Gallery Section -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h2 class="display-4 mb-3" style="font-family: 'Playfair Display', serif; color: var(--primary-green);">Our Farm Gallery</h2>
+                <p class="text-muted">Click on images to view in full size</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Image 1 -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="gallery-image-container" onclick="openModal('gallery-image-1.jpg', 'Our Fields - Farm View')">
+                    <img src="gallery-image-1.jpg" alt="Farm Image 1" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="overlay-text">Our Fields</h4>
+                        <p class="click-hint">Click to view full size</p>
+                    </div>
+                    <!-- Image Placeholder Info -->
+                    <div class="image-info-box">
+                        <strong>Image 1 (2550×1650):</strong><br>
+                        <em>AI Prompt: "Wide panoramic view of green agricultural fields, farming landscape, 3:2 aspect ratio, natural lighting, rural farming scene"</em>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="gallery-image-container" onclick="openModal('gallery-image-2.jpg', 'Our Harvest - Golden Fields')">
+                    <img src="gallery-image-2.jpg" alt="Farm Image 2" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="overlay-text">Our Harvest</h4>
+                        <p class="click-hint">Click to view full size</p>
+                    </div>
+                    <!-- Image Placeholder Info -->
+                    <div class="image-info-box">
+                        <strong>Image 2 (2550×1650):</strong><br>
+                        <em>AI Prompt: "Abundant grain harvest display, farmers working in fields, 3:2 aspect ratio, golden hour photography, agricultural abundance"</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="">
+        <div class="modal-caption">
+            <h4 id="modalTitle"></h4>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-5">
+                    <h2 class="display-4 mb-4" style="font-family: 'Playfair Display', serif;">About GreenHarvest Farms</h2>
+                    <p class="lead">With over two decades of farming excellence, we've built a reputation for producing the finest quality grains through sustainable and innovative agricultural practices.</p>
+                    <p>Our commitment to quality starts from the soil and extends to your table. We combine traditional farming wisdom with modern technology to deliver premium grains that nourish families across the region.</p>
+                </div>
+                <!-- <div class="col-lg-6"> -->
+                    <!-- <div class="row"> -->
+                        <!-- <div class="col-md-6"> -->
+                            <!-- <div class="stats-card"> -->
+                                <!-- <div class="stats-number">500+</div> -->
+                                <!-- <div>Acres Cultivated</div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div class="col-md-6"> -->
+                            <!-- <div class="stats-card"> -->
+                                <!-- <div class="stats-number">20+</div> -->
+                                <!-- <div>Years Experience</div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div class="col-md-6"> -->
+                            <!-- <div class="stats-card"> -->
+                                <!-- <div class="stats-number">1000+</div> -->
+                                <!-- <div>Happy Customers</div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div class="col-md-6"> -->
+                            <!-- <div class="stats-card"> -->
+                                <!-- <div class="stats-number">15</div> -->
+                                <!-- <div>Grain Varieties</div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="display-4 text-center mb-5" style="font-family: 'Playfair Display', serif;">Get In Touch</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="contact-card text-center">
+                                <i class="fas fa-map-marker-alt fa-2x mb-3" style="color: var(--accent-gold);"></i>
+                                <h5>Visit Our Farm</h5>
+                                <p>Suraiahpalli, Manthani, Peddapalli<br>Telangana, India - 505184</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">	
+                            <div class="contact-card text-center">
+                                <i class="fas fa-phone fa-2x mb-3" style="color: var(--accent-gold);"></i>
+                                <h5>Call Us</h5>
+                                <p>+91 94411 68563</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="contact-card text-center">
+                                <i class="fas fa-envelope fa-2x mb-3" style="color: var(--accent-gold);"></i>
+                                <h5>Email Us</h5>
+                                <p>farmersforyou2025@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        });
+
+        // Animate content on scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all process content
+        document.querySelectorAll('.process-content').forEach(content => {
+            observer.observe(content);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Dynamic navbar opacity
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(45, 80, 22, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(45, 80, 22, 0.95)';
+            }
+        });
+
+        // Stats counter animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statsNumber = entry.target.querySelector('.stats-number');
+                    const finalNumber = parseInt(statsNumber.textContent);
+                    let currentNumber = 0;
+                    const increment = finalNumber / 50;
+                    
+                    const timer = setInterval(() => {
+                        currentNumber += increment;
+                        if (currentNumber >= finalNumber) {
+                            statsNumber.textContent = finalNumber + (statsNumber.textContent.includes('+') ? '+' : '');
+                            clearInterval(timer);
+                        } else {
+                            statsNumber.textContent = Math.floor(currentNumber) + (statsNumber.textContent.includes('+') ? '+' : '');
+                        }
+                    }, 30);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stats-card').forEach(card => {
+            statsObserver.observe(card);
+        });
+		
+		// Image Modal Functions
+function openModal(imageSrc, title) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    
+    modal.style.display = 'block';
+    modalImg.src = imageSrc;
+    modalTitle.textContent = title;
+    
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+    
+    // Restore body scrolling
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside the image
+window.onclick = function(event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+
+    </script>
+</body>
+</html>
